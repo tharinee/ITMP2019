@@ -123,6 +123,30 @@
 			}
 		}
 		window.addEventListener("scroll", ppp);
+		function progressBar() {
+			var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+			var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+			var scrolled = (winScroll / height) * 100;
+			document.getElementById("topLine").style.width = scrolled + "%";
+		}
+		window.addEventListener("scroll", progressBar);
+		function chartOpen(){
+			let bar = barr.getBoundingClientRect();
+			if(bar.top < window.innerHeight && bar.bottom > 0){
+				document.getElementById("bar_1").classList.toggle("close");
+				document.getElementById("bar_2").classList.toggle("close");
+				document.getElementById("bar_3").classList.toggle("close");
+				document.getElementById("bar_4").classList.toggle("close");
+			}
+			else{
+				document.getElementById("bar_1").classList.toggle("close");
+				document.getElementById("bar_2").classList.toggle("close");
+				document.getElementById("bar_3").classList.toggle("close");
+				document.getElementById("bar_4").classList.toggle("close");
+			}
+		}
+		window.addEventListener("scroll", chartOpen);
+		
 	</script>
 </body>
 </html>
